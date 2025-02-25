@@ -362,9 +362,11 @@
     flex-direction: column;
     justify-content: flex-end;
     text-align: right;
-    font-family: '1FTV Roashe';
+    font-family: 'SVN-Gotham';
     padding-right: 50px;
     margin-bottom: 30px;
+    font-weight: 300;
+    font-size: .8em;
 }
 
 .box-save{
