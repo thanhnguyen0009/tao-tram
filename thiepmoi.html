@@ -71,11 +71,11 @@
             <div class="box-img">
                 <label for="" class="til1" data-aos="zoom-in">JUST MARRIED</label>
                 <div class="box-con">
-                    <img src="./tao-tram/anh/ye.jpg" alt="" class="img-con" data-aos="fade-right">
+                    <img src="./tao-tram/anh/ye.jpg" alt="" class="img-con1" data-aos="fade-right">
                     <img src="./tao-tram/anh/yeen.jpg" alt="" class="img-con"data-aos="fade-left">
                 </div>
                 <div class="box-con">
-                    <img src="./tao-tram/anh/yen.jpg" alt="" class="img-con" data-aos="fade-right">
+                    <img src="./tao-tram/anh/yen.jpg" alt="" class="img-con1" data-aos="fade-right">
                     <img src="./tao-tram/anh/yenn.jpg" alt="" class="img-con"data-aos="fade-left">
                 </div>
             </div>
@@ -126,6 +126,47 @@
         </div>
     </div>
     
+
+
+
+
+    <script>
+        window.onload = function() {
+    // Lấy tất cả các phần tử cho các hiệu ứng fade-down, fade-up, fade-right, fade-left, zoom-in
+    const fadeDownElements = document.querySelectorAll('.kinhmoi, .box-time, .');  // Các phần tử fade-down
+    const fadeUpElements = document.querySelectorAll('.imge');    // Các phần tử fade-up
+    const fadeRightElements = document.querySelectorAll('.lb3, .story1');                               // Các phần tử fade-right
+    const fadeLeftElements = document.querySelectorAll('.lb3, .story2');                                // Các phần tử fade-left
+    const zoomInElements = document.querySelectorAll('.time-date, .lb-time, .lb-timee');                // Các phần tử zoom-in
+
+    // Cấu hình của IntersectionObserver
+    const options = {
+        root: null, // Theo mặc định là viewport
+        threshold: 0.5 // Kích hoạt khi 50% phần tử hiển thị trong viewport
+    };
+
+    // Tạo đối tượng IntersectionObserver để theo dõi sự xuất hiện và mất đi của phần tử
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Nếu phần tử xuất hiện trong viewport, thêm lớp "visible"
+                entry.target.classList.add('visible');
+            } else {
+                // Nếu phần tử không còn trong viewport, xóa lớp "visible"
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, options);
+
+    // Quan sát các phần tử theo từng hiệu ứng
+    fadeDownElements.forEach(element => observer.observe(element));
+    fadeUpElements.forEach(element => observer.observe(element));
+    fadeRightElements.forEach(element => observer.observe(element));
+    fadeLeftElements.forEach(element => observer.observe(element));
+    zoomInElements.forEach(element => observer.observe(element));
+};
+
+    </script>
 <script>
        const scriptURL = 'https://script.google.com/macros/s/AKfycbyOUnePyYI-eLYeZPGikyqHqGfhdCcSmtrkPZgzxEfpaKcYW66_Bm54wVRY6KQsI4w/exec';
         const form = document.forms['tao-tram'];
