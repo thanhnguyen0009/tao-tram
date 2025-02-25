@@ -333,6 +333,8 @@
 
 .container-wrapper{
     width: 100%;
+    background-image: url('./anh/back-03.png');
+    background-size: cover;
 }
 
 .title{
